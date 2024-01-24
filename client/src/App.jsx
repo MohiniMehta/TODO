@@ -43,7 +43,7 @@ export default function App() {
     <h1 className="title">TO DO's</h1>
     <form className="form" onSubmit={createNewTodo}>
       <input type="text" value={content} onChange={(e)=>setContent(e.target.value)} placeholder="Enter a new todo..." className="form_input" required/>
-      <button type="submit">Create Todo</button>
+      <button type="submit" className="form__button">Create Todo</button>
     </form>
     <div className="todos">
     {(todos.length>0) && 

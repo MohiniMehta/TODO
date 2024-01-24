@@ -14,7 +14,7 @@ export default function Todo(props){
         setTodos(
             currentTodos=>{
                 return currentTodos.map((currentTodo)=>{
-                    if(currentTodo._id==todoId){
+                    if(currentTodo._id===todoId){
                         return {...currentTodo,status:!currentTodo.status};
 
                     }
@@ -41,7 +41,7 @@ export default function Todo(props){
     return(
         <div className="todo">
         <p>{todo.todo}</p>
-        <div>
+        <div className="mutation">
           <button className="todo__status"
           onClick={()=>updateTodo(todo._id,todo.status)}
           >
