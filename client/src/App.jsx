@@ -1,7 +1,9 @@
 import { useEffect, useState} from "react";
+import Todo from "./Todo";
 
 export default function App() {
-   const [message,setMessage]=useState("");
+   const [todos,setTodos]=useState("");
+   const [content,setContent]=useState("");
   useEffect(() => {
     async function getTodos() {
       try {
@@ -12,7 +14,7 @@ export default function App() {
         const todos = await res.json();
     
         console.log(todos);
-        setMessage(todos.mssg);
+        setTodos(todos);
       } catch (error) {
         console.error("Error fetching data:", error.message);
       }
@@ -20,11 +22,37 @@ export default function App() {
     getTodos();
   }, []);
   
+ const createNewTodo= async (e)=>{
+  e.preventDefault();
+  if (content.length>1){
+    const res=await fetch("/api/todos",{
+      method:"POST",
+      body: JSON.stringify({todo:content}),
+      headers:{
+        "Content-Type":"application/json",
+      },
+    });
+    const newTodo =await res.json();
+    setContent("");
+    setTodos([...todos,newTodo]);
+  }
+ }
 
   return (
    <main className="container">
-    <h1>TO DO's</h1>
-    {message &&<p>{message}</p>}
+    <h1 className="title">TO DO's</h1>
+    <form className="form" onSubmit={createNewTodo}>
+      <input type="text" value={content} onChange={(e)=>setContent(e.target.value)} placeholder="Enter a new todo..." className="form_input" required/>
+      <button type="submit">Create Todo</button>
+    </form>
+    <div className="todos">
+    {(todos.length>0) && 
+    todos.map((todo)=>
+    (
+      <Todo key={todo._id} todo={todo} setTodos={setTodos}/>
+    ))
+    }
+    </div>
    </main>
   );
 }
