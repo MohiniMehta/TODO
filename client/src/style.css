@@ -110,3 +110,15 @@ background-image: url("https://www.transparenttextures.com/patterns/cartographer
       background-color: rgba(217, 184, 0, 0.5);
    }
 }
+@media (max-width:420px){
+   .title{
+      font-size: 2.5rem;
+   }
+   .form{
+      width:95%
+   }
+   .todo{
+      width:95%;
+      font-size: 1.2rem;
+   }
+}
