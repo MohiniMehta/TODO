@@ -13,7 +13,7 @@ Clone the repository to your local machine:
 
 bash
 Copy code
-git clone https://github.com/your-username/Smart-todo.git
+git clone [https://github.com/your-username/Smart-todo.git](https://github.com/MohiniMehta/TODO.git)
 Open the project in your preferred code editor.
 
 Launch the app using a web browser or your preferred development environment.
