@@ -1,6 +1,7 @@
 # Smart-todo App
 
 Welcome to Smart-todo, a simple and smart Todo app designed to help you organize your tasks efficiently. This app allows you to list your tasks, mark them as completed, and delete them when you're done. The user-friendly interface makes task management a breeze.
+<img src="" alt="screenshot of the todo app"/>
 
 ## Features
 
@@ -43,5 +44,5 @@ If you'd like to contribute to the development of Smart-todo, follow these steps
 
 ## Acknowledgments
 This project was inspired by the need for a simple and effective task management solution.
-Special thanks to contributors who have helped improve and maintain Smart-todo.
-Happy tasking! 🚀
+Special thanks to contributors who have helped improve and maintain Smart-todo.</br>
+## Happy tasking! 🚀
